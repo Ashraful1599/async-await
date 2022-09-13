@@ -9,41 +9,11 @@
 <body>
 <div id="demo"></div>
 
-<button onclick="startWorker()" id="">Start worker</button>
-<button onclick="stopWorker()" id="">Stop Worker</button>
-<button onclick="alert('This is alert')" id="">Alert</button>
-
-<script>
-    let w;
-  function startWorker(){
-
-    if(typeof Worker !== "undefined"){
-
-      if(typeof w == "undefined"){
-        w = new Worker('app.js');
-      }
-
-      w.onmessage = function(event){
-            document.getElementById("demo").innerHTML = event.data;
-      }
-
-
-
-    }else{
-      alert("Worker doesn't support")
-    }
-  }
-
-
-  function stopWorker(){
-    w.terminate();
-    w = undefined;
-  }
-
-</script>
 
 
 
 
+
+<script src="./app.js"></script>
 </body>
 </html>

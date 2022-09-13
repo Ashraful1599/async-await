@@ -1,9 +1,8 @@
-let i = 0;
-
-while (i<10000000) {
-
-    i++;
+async function getDemodata(){
+    let data = await fetch("https://jsonplaceholder.typicode.com/todos/1");
+    let json = await data.json();
     
+    document.getElementById("demo").innerHTML = json.userId;
 }
 
-postMessage(i);
+getDemodata();
